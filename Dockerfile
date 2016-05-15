@@ -15,13 +15,14 @@
 #
 # VERSION   0.0.1
 
-FROM nginx
+FROM nginx:1.9.15-alpine
 
 MAINTAINER Evan Brown <evanbrown@google.com>
 
-RUN rm /etc/nginx/conf.d/*.conf
-
-RUN mkdir -p /etc/nginx/extra-conf.d
+RUN rm /etc/nginx/conf.d/*.conf \
+    && apk add --update bash \
+    && rm -rf /var/cache/apk/* \
+    && mkdir -p /etc/nginx/extra-conf.d
 
 WORKDIR /usr/src
 
