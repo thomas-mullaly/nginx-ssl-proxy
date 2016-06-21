@@ -15,9 +15,9 @@
 #
 # VERSION   0.0.1
 
-FROM nginx:1.9.15-alpine
+FROM nginx:1.10.1-alpine
 
-MAINTAINER Evan Brown <evanbrown@google.com>
+MAINTAINER Thomas Mullaly <thomas.mullaly@gmail.com>
 
 RUN rm /etc/nginx/conf.d/*.conf \
     && apk add --update bash \
